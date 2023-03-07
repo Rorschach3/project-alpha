@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from accounts.forms import LoginForm, SignupForm
-from django. contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 
@@ -39,8 +39,7 @@ def signup(request):
                 form.add_error("password", "Passwords do not match")
             else:
                 user = User.objects.create_user(
-                    username=username,
-                    password=password
+                    username=username, password=password
                 )
                 login(request, user)
                 return redirect("list_projects")

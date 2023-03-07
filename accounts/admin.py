@@ -1,6 +1,7 @@
 from django.contrib import admin
 from tasks.models import Task
 
+
 # Register your models here.
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
@@ -10,5 +11,5 @@ class TaskAdmin(admin.ModelAdmin):
         "due_date",
         "is_completed",
         "project",
-        "assignee"
+        "assignee",
     )

@@ -7,7 +7,7 @@ from projects.forms import ProjectForm
 # Create your views here.
 @login_required()
 # related to models
-def list_projects(request): 
+def list_projects(request):
     # related to admin
     my_projects = Project.objects.filter(owner=request.user)
     # related to templates
