@@ -8,4 +8,4 @@ from django.contrib.auth.decorators import login_required
 def list_projects(request):
     my_projects = Project.objects.filter(owner=request.user)
     context = {"projects": my_projects}# related to templates
-    return render(request, "projects/list_projects.html", context)
+    return render(request, "projects/list_projects.html", context)#related to urls
