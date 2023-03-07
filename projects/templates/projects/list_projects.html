@@ -14,7 +14,7 @@
             <p>
                 You are not assigned to any projects
             </p>
-            {% else %}{% for project in projects %}{% endfor %}
+            {% else %}
             <table>
                 <thead>
                     <tr>
@@ -23,6 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for project in projects %}
                     <tr>
                         <td>
                             {{ project.name }}
@@ -31,6 +32,7 @@
                             {{ project.tasks.all|length }}
                         </td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             {% endif %}
