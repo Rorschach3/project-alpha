@@ -38,7 +38,10 @@ def signup(request):
             if password != password_confirmation:
                 form.add_error("password", "Passwords do not match")
             else:
-                user = User.objects.create_user(username=username, password=password)
+                user = User.objects.create_user(
+                    username=username,
+                    password=password
+                )
                 login(request, user)
                 return redirect("list_projects")
                 user.save()

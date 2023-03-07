@@ -11,12 +11,10 @@
         <div>
             <h1>My Projects</h1>
             {% if not projects %}
-            <p>
-                You are not assigned to any projects
-            </p>
+                <p>You are not assigned to any projects</p>
             {% else %}
-            <table>
-                <thead>
+                <table>
+                    <thead>
                     <tr>
                         <th>Name</th>
                         <th>Number of tasks</th>
@@ -26,7 +24,7 @@
                     {% for project in projects %}
                     <tr>
                         <td>
-                            {{ project.name }}
+                            <a href="{% url "show_project" project.id %}">{{ project.name }}</a>
                         </td>
                         <td>
                             {{ project.tasks.all|length }}
